@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/feng/Projects/cpp_vscode_template
+CMAKE_SOURCE_DIR = /home/feng/Projects/cpp_vscodium_template
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/feng/Projects/cpp_vscode_template
+CMAKE_BINARY_DIR = /home/feng/Projects/cpp_vscodium_template
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/feng/Projects/cpp_vscode_template/CMakeFiles /home/feng/Projects/cpp_vscode_template//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/feng/Projects/cpp_vscodium_template/CMakeFiles /home/feng/Projects/cpp_vscodium_template//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/feng/Projects/cpp_vscode_template/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/feng/Projects/cpp_vscodium_template/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -117,6 +117,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named core
+
+# Build rule for target.
+core: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 core
+.PHONY : core
+
+# fast build rule for target.
+core/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/build
+.PHONY : core/fast
+
+#=============================================================================
 # Target rules for targets named cpp_template
 
 # Build rule for target.
@@ -128,6 +141,30 @@ cpp_template: cmake_check_build_system
 cpp_template/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_template.dir/build.make CMakeFiles/cpp_template.dir/build
 .PHONY : cpp_template/fast
+
+src/core/core.o: src/core/core.cpp.o
+.PHONY : src/core/core.o
+
+# target to build an object file
+src/core/core.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/src/core/core.cpp.o
+.PHONY : src/core/core.cpp.o
+
+src/core/core.i: src/core/core.cpp.i
+.PHONY : src/core/core.i
+
+# target to preprocess a source file
+src/core/core.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/src/core/core.cpp.i
+.PHONY : src/core/core.cpp.i
+
+src/core/core.s: src/core/core.cpp.s
+.PHONY : src/core/core.s
+
+# target to generate assembly for a file
+src/core/core.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/src/core/core.cpp.s
+.PHONY : src/core/core.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -161,7 +198,11 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... core"
 	@echo "... cpp_template"
+	@echo "... src/core/core.o"
+	@echo "... src/core/core.i"
+	@echo "... src/core/core.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
