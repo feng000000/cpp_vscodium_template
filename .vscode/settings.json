@@ -1,0 +1,28 @@
+{
+    "[cpp]": {
+        // "editor.formatOnSave": true
+    },
+
+    // 内联类型提示
+    "editor.inlayHints.enabled": "off",
+    // 鼠标悬停提示
+    "editor.hover.enabled": true,
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": false
+    },
+
+    "clang-format.executable": "clang-format",
+    "clang-format.executable.linux": "clang-format",
+    "clangd.arguments": [
+        "--query-driver=/usr/bin/g++",
+    ],
+    "clangd.detectExtensionConflicts": true,
+    "clangd.enable": true,
+    "clangd.enableCodeCompletion": true,
+    "clangd.enableHover": true,
+    "clangd.path": "clangd",
+    "clangd.restartAfterCrash": true,
+    "clangd.serverCompletionRanking": true,
+}

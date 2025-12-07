@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/feng/Projects/cpp_vscode_template",
+  "command": "/usr/bin/c++  -I/home/feng/Projects/cpp_vscode_template/include -std=gnu++20 -o CMakeFiles/cpp_template.dir/src/main.cpp.o -c /home/feng/Projects/cpp_vscode_template/src/main.cpp",
+  "file": "/home/feng/Projects/cpp_vscode_template/src/main.cpp"
+}
+]
